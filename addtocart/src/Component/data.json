@@ -1,0 +1,28 @@
+{
+    "data" : [
+        {
+            "id" : 1,
+            "name" : "Sony Brvaia TV",
+            "desc" : "Vu 126 cm (50 Inches) Premium 4K Series Smart Android LED TV 50PM (Grey) (2022 Model)",
+            "price" : 31999
+        },
+        {
+            "id" : 2,
+            "name" : "Samsung Galaxy S20",
+            "desc" : "FE 5G (Cloud Navy, 8GB RAM, 128GB Storage) with No Cost EMI & Additional Exchange Offers",
+            "price" : 39990
+        },
+        {
+            "id" : 3,
+            "name" : "Lloyd",
+            "desc" : "1.5 Ton 3 Star Split AC (GLS18B3YWBEP, 100% Copper, White with Blue Deco Strip)",
+            "price" : 32990
+        },
+        {
+            "id" : 4,
+            "name" : "Whirlpool 240 L",
+            "desc" : "Frost Free Multi-Door Refrigerator (FP 263D PROTTON ROY, German Steel)",
+            "price" : 30000
+        }
+    ]
+}
