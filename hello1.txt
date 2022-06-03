@@ -1,1 +1,2 @@
 Hello in Git
+Hello in vs Code
