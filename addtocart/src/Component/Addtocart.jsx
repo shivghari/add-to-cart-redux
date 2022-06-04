@@ -27,7 +27,7 @@ function Addtocart() {
               position: "sticky",
               display: "flex",
               justifyContent: "space-between",
-              width: "100%",
+              width: "94%",
               margin: "auto",
               paddingTop: "15px",
               backgroundColor: "#eae4e4",
