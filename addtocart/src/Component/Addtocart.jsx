@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Card, Row, Col, Input, Badge, Button } from "antd";
+import { Typography, Card, Row, Col, Input, Badge, Button, Affix } from "antd";
 import {
   PlusOutlined,
   MinusOutlined,
@@ -16,26 +16,55 @@ function Addtocart() {
   console.log(data);
   const itemCount = useSelector((state) => state.cart.itemCount);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const itemList = useSelector((state) => state.cart.itemList);
   const dispatch = useDispatch();
   return (
-    <div style={{ height: "779px", width: "100%" }}>
+    <div style={{ width: "100%" }}>
       <div>
-        <br />
-        <Title>
-          Add to cart Page
-          <Badge count={itemCount}>
-            <ShoppingCartOutlined style={{ fontSize: "40px" }} />
-          </Badge>
-        </Title>
-        <Title level={3}>Total Amount : {totalAmount}</Title>
+        <Affix offsetTop={0}>
+          <div
+            style={{
+              position: "sticky",
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+              margin: "auto",
+              paddingTop: "15px",
+              backgroundColor: "#eae4e4",
+              // borderBottom: "3px solid black",
+            }}
+          >
+            <Title>Add to cart Page</Title>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <Badge count={itemCount}>
+                <ShoppingCartOutlined style={{ fontSize: "40px" }} />
+              </Badge>
+              <Title level={3} style={{ paddingLeft: "10px" }}>
+                Total Amount : {totalAmount}
+              </Title>
+            </div>
+          </div>
+        </Affix>
       </div>
       <div>
-        <Row style={{ marginLeft: "25px", marginTop: "60px" }}>
+        <Row
+          style={{
+            marginTop: "60px",
+            // width: "90%",
+            // margin: "auto",
+            margin: "30px",
+          }}
+          gutter={[32, 32]}
+        >
           {data?.data.map((item) => (
-            <Col lg={6}>
+            <Col lg={6} sm={12} xs={24}>
               <Card
                 style={{
-                  width: 300,
                   padding: "20px",
                 }}
                 cover={
@@ -58,7 +87,7 @@ function Addtocart() {
                     }}
                   />,
                   <Col>
-                    <Input defaultValue={0} />
+                    <Input defaultValue={0} value={itemList[item.id]} />
                   </Col>,
                   <MinusOutlined
                     style={{ fontSize: "25px" }}
@@ -86,7 +115,7 @@ function Addtocart() {
       </div>
       <Button
         type="primary"
-        style={{ marginTop: "50px" }}
+        style={{ marginTop: "50px", marginBottom: "30px" }}
         onClick={() => {
           dispatch(clearCart());
         }}
